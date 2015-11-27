@@ -6,6 +6,6 @@ class HelloWorld {
         new HelloWorld().print();
     }
     static {
-        System.loadLibrary("helloworld");
+        System.loadLibrary("HelloWorld");
     }
 }
