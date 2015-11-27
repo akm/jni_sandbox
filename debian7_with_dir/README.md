@@ -7,4 +7,5 @@ $ javah -jni -classpath classes -d lib com.example.HelloWorld
 $ gcc -fPIC -o jni/libHelloWorld.so -lc -shared -I/usr/lib/jvm/java-7-openjdk-amd64/include -I/usr/lib/jvm/java-7-openjdk-amd64/include/linux -Ilib src/cpp/HelloWorld.cpp
 $ export LD_LIBRARY_PATH=jni
 $ java -classpath classes com.example.HelloWorld
+Oh JNI, how cumbersome you are!
 ```
