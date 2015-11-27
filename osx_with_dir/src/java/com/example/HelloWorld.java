@@ -1,3 +1,5 @@
+package com.example;
+
 class HelloWorld {
     private native void print();
     public static void main(String[] args) {
