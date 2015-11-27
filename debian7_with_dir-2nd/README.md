@@ -4,3 +4,4 @@ mkdir classes
 javac -d ./classes/ ./src/com/marakana/jniexamples/Hello.java
 cd classes
 javah -jni com.marakana.jniexamples.Hello
+gcc -fPIC -o libHelloImpl.so -lc -shared -I/usr/lib/jvm/java-7-openjdk-amd64/include -I/usr/local/jdk1.6.0_03/include/linux com_marakana_jniexamples_Hello.c
