@@ -6,6 +6,7 @@ int hello_repeat(char* name, int times) {
   for (i = 0; i < times; i++) {
     printf("Hello %s\n", name);
   }
+  return times;
 }
 
 int main(int argc, char *args[]){
