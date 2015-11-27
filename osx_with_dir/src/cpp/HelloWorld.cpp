@@ -1,6 +1,6 @@
 #include <jni.h>
 #include <iostream>
-#include "HelloWorld.h"
+#include "com_example_HelloWorld.h"
 using namespace std;
  
 JNIEXPORT void JNICALL 
