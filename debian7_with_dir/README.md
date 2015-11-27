@@ -17,7 +17,7 @@ Oh JNI, how cumbersome you are!
 
 ```
 cd debian7_with_dir
-gcc -o lib/HelloRepeat.o src/cpp/HelloRepeat.c
+gcc -c -fPIC -o lib/HelloRepeat.o src/cpp/HelloRepeat.c
 cp src/cpp/HelloRepeat.h lib/HelloRepeat.h
 ```
 
@@ -25,5 +25,17 @@ cp src/cpp/HelloRepeat.h lib/HelloRepeat.h
 
 ```
 cp src/cpp/HelloRepeat.h lib/
+javac -d lib src/java/com/example/HelloRepeat.java 
+javah -jni -classpath lib -d lib com.example.HelloRepeat
+gcc -fPIC -c -g -I./lib -I/usr/lib/jvm/java-7-openjdk-amd64/include -fclasspath=lib -foutput-class-dir=lib -c -o lib/HelloRepeatJni.o src/cpp/HelloRepeatJni.c
+ld -r lib/HelloRepeatJni.o lib/HelloRepeat.o -o lib/HelloRepeatJniAll.o
+gcc -shared -o jni/libHelloRepeatJni.so lib/HelloRepeatJniAll.o
 ```
+
+``
+$ java -classpath lib -Djava.library.path=$PWD/jni com.example.HelloRepeat foo 2
+Hello foo
+Hello foo
+```
+
 
