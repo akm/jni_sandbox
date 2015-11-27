@@ -9,3 +9,17 @@ $ gcc -shared -o jni/libHelloWorld.so lib/HelloWorld.o
 $ java -classpath lib -Djava.library.path=$PWD/jni com.example.HelloWorld
 Oh JNI, how cumbersome you are!
 ```
+
+
+## use legacy compiled file
+
+### make legacy compiled file
+
+```
+cd debian7_with_dir
+gcc -o lib/HelloRepeat.o src/cpp/HelloRepeat.c
+cp src/cpp/HelloRepeat.h lib/HelloRepeat.h
+```
+
+### link legacy compiled file
+
