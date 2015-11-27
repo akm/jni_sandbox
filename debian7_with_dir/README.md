@@ -23,3 +23,7 @@ cp src/cpp/HelloRepeat.h lib/HelloRepeat.h
 
 ### link legacy compiled file
 
+```
+cp src/cpp/HelloRepeat.h lib/
+```
+
