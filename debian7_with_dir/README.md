@@ -32,7 +32,7 @@ ld -r lib/HelloRepeatJni.o lib/HelloRepeat.o -o lib/HelloRepeatJniAll.o
 gcc -shared -o jni/libHelloRepeatJni.so lib/HelloRepeatJniAll.o
 ```
 
-``
+```
 $ java -classpath lib -Djava.library.path=$PWD/jni com.example.HelloRepeat foo 2
 Hello foo
 Hello foo
@@ -63,7 +63,7 @@ ld -r lib/HelloRepeatJni.o lib/HelloRepeat.a -o lib/HelloRepeatJniAll.o
 gcc -shared -o jni/libHelloRepeatJni.so lib/HelloRepeatJniAll.o
 ```
 
-``
+```
 $ java -classpath lib -Djava.library.path=$PWD/jni com.example.HelloRepeat foo 2
 Hello foo
 Hello foo
